@@ -136,3 +136,53 @@ Similarly, we also employed an Auto-regressive approach to the existing Bi-LSTM 
 graph represents the prediction of 365 days based on the past data.
 
 ![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/a7bcba1f-7029-41d9-a80a-df0d0e2b7982)
+
+## 3.4. Prediction using GRU Model:
+
+Our experiment consists of usage of GRU for prediction. The test scores obtained for GRU are as follows:
+```
+Test Score: 4.80 RMSE
+Test Score: 0.93461 R2
+```
+The graph obtained below is plotted against predictions over training and testing data overlapped over original values.
+![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/3ec5f7e7-07d0-420f-ba57-4cbd9a80d511)
+Auto-regression output for GRU is as follows.
+![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/0dae1eaf-2d51-4fc3-8189-a793d2015af1)
+
+## 3.5. Prediction using Bi-directional GRU:
+
+Predictions from bi-directional GRU is as follows. The test scores are:
+```
+Test Score: 4.80 RMSE
+Test Score: 0.93461 R2
+```
+The graph obtained below is plotted against predictions over training and testing data overlapped over original values.
+![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/57bf4974-ac33-4dea-b65d-2f2bdfc66a02)
+Auto-regression output for GRU is as follows.
+![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/82296c27-6bde-4db3-9519-20ed964feb45)
+
+3.6. Prediction using DeepAR:
+
+DeepAR algorithm has also been implemented over the data. The experiment was to understand and compare the performance of various models vs the state of the art DeepAR model. The model performed well over the data but the training time was relatively huge and was increasing exponentially with increase in prediction_window. By using a prediction window of 100 days, the model was trained for 10 epochs and 3minutes per epoch. The results of the DeepAR model are provided in the graph below.
+
+![image](https://github.com/NotYeshwanthReddy/Air_Pollution_Prediction/assets/31570514/10b12beb-2214-4a09-933c-7e1077d74e6b)
+
+# CONCLUSION:
+The R2 values of all the models is in the range of (0.90 - 0.92). The highest score has been reached by the bi-directional GRU model being 0.9175. According to the findings, the Bi-GRU network performs marginally better than the LSTM network. Additionally, bidirectional GRU has a reduced error value when compared to any other model, which suggests that its adoption can enhance prediction accuracy. This is because the bidirectional GRU processes the time series both chronologically and anti chronologically, capturing patterns that one-direction GRUs could overlook and enhancing the ability of time series to learn features.
+
+# FUTURE WORK:
+In the future, we can improve our model even further and assess it using a larger dataset. We can also use the programme to forecast the concentration of other pollutants. By using techniques like Convolution Neural Network (CNN), the analysis can be expanded further in order to detect the unequal changes occurring in the air pollution data. The relationship between several characteristics can also be evaluated, allowing us to determine whether a concealed parameter will correlate the performance of features that seem to perform differently from the initial glimpse. As both LSTM and GRU demonstrate their significance in prediction, there may as well be a chance that their combined model will be more effective than LSTM and GRU used alone.
+
+# REFERENCES:
+<ol>
+<li> Wang, Jingyang, Jiazheng Li, Xiaoxiao Wang, Jue Wang, and Min Huang. "Air quality prediction using CT-LSTM." Neural Computing and Applications 33, no. 10 (2021): 4779-4792. </li>
+<li> Tiwari, Animesh, Rishabh Gupta, and Rohitash Chandra. "Delhi air quality prediction using LSTM deep learning models with a focus on COVID-19 lockdown." arXiv preprint arXiv:2102.10551 (2021).</li>
+<li> Athira, V., P. Geetha, Rab Vinayakumar, and K. P. Soman. "Deepairnet: Applying recurrent networks for air quality prediction." Procedia computer science 132 (2018): 1394-1403.</li>
+<li> G. Dantas, B. Siciliano, B. B. Franc ̧a, C. M. da Silva, and G. Arbilla, “The impact of COVID-19 partial lockdown on the air quality of the city of rio de janeiro, brazil,” Science of the Total Environment, vol. 729, p. 139085, 2020</li>
+<li> Zhang, Luo, Peng Liu, Lei Zhao, Guizhou Wang, Wangfeng Zhang, and Jianbo Liu. "Air quality predictions with a semi-supervised bidirectional LSTM neural network." Atmospheric Pollution Research 12, no. 1 (2021): 328-339.</li>
+<li> Song, Xijuan, Jijiang Huang, and Dawei Song. "Air quality prediction based on LSTM-Kalman model." In 2019 IEEE 8th Joint International Information Technology and Artificial Intelligence Conference (ITAIC), pp. 695-699. IEEE, 2019.</li>
+<li> Zhou, Xinxing, Jianjun Xu, Ping Zeng, and Xiankai Meng. "Air pollutant concentration prediction based on GRU method." In Journal of Physics: Conference Series, vol. 1168, no. 3, p. 032058. IOP Publishing, 2019.</li>
+<li> Ahn, Jaehyun, Dongil Shin, Kyuho Kim, and Jihoon Yang. "Indoor air quality analysis using deep learning with sensor data." Sensors 17, no. 11 (2017): 2476.</li>
+<li> Bekkar, Abdellatif, Badr Hssina, Samira Douzi, and Khadija Douzi. "Air-pollution prediction in smart city, deep learning approach." Journal of big Data 8, no. 1 (2021): 1-21.</li>
+<li> Du, Shengdong, Tianrui Li, Yan Yang, and Shi-Jinn Horng. "Deep air quality forecasting using hybrid deep learning framework." IEEE Transactions on Knowledge and Data Engineering 33, no. 6 (2019): 2412-2424.</li>
+</ol>
